@@ -6,7 +6,7 @@ async function getRecipe() {
     setRecipe(response);
   } catch (error) {
     console.error('Error fetching recipe:', error);
-    setErrorMessage('Failed to fetch recipe. Please try again.');
+    setErrorMessage('Failed to fetch recipe. Please check your ingredients and try again.');
   } finally {
     setLoading(false);
   }
@@ -42,6 +42,9 @@ export async function fetchGPTResponse(prompt) {
     }
 
     const data = await response.json();
+    if (!data.choices || data.choices.length === 0) {
+        throw new Error('No choices returned from the API.');
+    }
     return data.choices[0].message.content;
   } catch (error) {
     console.error('Error fetching GPT response:', error);
