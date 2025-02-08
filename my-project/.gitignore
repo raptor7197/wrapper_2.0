@@ -1,2 +1,7 @@
+.env.local
+.env.development.local
+.env.development
+.env
+
 node_modules
 dist

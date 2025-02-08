@@ -1,5 +1,6 @@
 import { createSignal, createEffect } from 'solid-js';
 
+
 function App() {
   const [ingredients, setIngredients] = createSignal("");
   const [recipe, setRecipe] = createSignal({
@@ -33,7 +34,7 @@ function App() {
   return (
     <div className="justify-center bg-blue-400 w-screen h-screen pt-5">
       <div class="bg-slate-400 shadow-md rounded-lg p-8 m-auto max-w-lg ">
-        <textarea
+        <textarea className = "align-text-bottom"
           value={ingredients()}
           onChange={(ev) => setIngredients(ev.target.value)}
           placeholder="Enter ingredients"
@@ -52,7 +53,7 @@ function App() {
         )}
       </div>
       <div>
-        <button onClick={getRecipe} disabled={loading()} className="bg-amber-300 border-1 rounded-sm align-items ml-230 mt-3.5">
+        <button onClick={getRecipe} disabled={loading()} className="bg-amber-300 border-1 rounded-lg align-items ml-230 mt-3.5 p-3">
           Get Recipe
         </button>
       </div>

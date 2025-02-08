@@ -1,3 +1,6 @@
+require('dotenv').config()
+
+
 async function getRecipe() {
   setLoading(true);
 
