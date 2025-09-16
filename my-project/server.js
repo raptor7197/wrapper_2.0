@@ -22,7 +22,7 @@ const customSystemPrompt = "You are a helpful AI assistant. Provide detailed, ac
 
 app.post('/api/generate', async (req, res) => {
   try {
-    const { prompt, customPrompt } = req.body;
+    const { prompt, customPrompt, language } = req.body;
     
     if (!prompt) {
       return res.status(400).json({ error: 'Prompt is required' });
@@ -34,8 +34,11 @@ app.post('/api/generate', async (req, res) => {
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
+    // Enhanced system prompt with language instructions
     const systemPrompt = customPrompt || customSystemPrompt;
-    const fullPrompt = `${systemPrompt}\n\nUser: ${prompt}`;
+    const languageInstruction = language ? `\n\nIMPORTANT: Please respond in the same language as the user's question. If the user asks in Hindi, respond in Hindi. If in Punjabi, respond in Punjabi. If in Telugu, respond in Telugu. If in Tamil, respond in Tamil. If in English, respond in English. Maintain the same language throughout your response.` : '';
+    
+    const fullPrompt = `${systemPrompt}${languageInstruction}\n\nUser: ${prompt}`;
 
     const result = await model.generateContent(fullPrompt);
     const response = await result.response;
@@ -45,6 +48,7 @@ app.post('/api/generate', async (req, res) => {
       success: true, 
       response: text,
       prompt: prompt,
+      language: language,
       timestamp: new Date().toISOString()
     });
 
