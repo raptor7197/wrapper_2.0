@@ -2,7 +2,7 @@ import { createSignal, onMount, onCleanup } from 'solid-js';
 import { getLanguageData, getSupportedLanguages } from './languages';
 import { VoiceInputManager, speechLanguages, speakText } from './voiceInput';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = '/api';
 
 const fetchGeminiResponse = async (prompt, customPrompt = '', language = 'hi') => {
   try {

@@ -2,7 +2,6 @@ export const languages = {
   en: {
     code: 'en',
     name: 'English',
-    flag: '🇬🇧',
     ui: {
       title: 'Farm Assistant',
       subtitle: 'AI Assistant for Farmers',
@@ -40,7 +39,6 @@ export const languages = {
   hi: {
     code: 'hi',
     name: 'हिंदी',
-    flag: '🇮🇳',
     ui: {
       title: 'कृषि सहायक',
       subtitle: 'किसानों के लिए AI सहायक',
@@ -78,7 +76,6 @@ export const languages = {
   pa: {
     code: 'pa',
     name: 'ਪੰਜਾਬੀ',
-    flag: '🇮🇳',
     ui: {
       title: 'ਖੇਤੀ ਸਹਾਇਕ',
       subtitle: 'ਕਿਸਾਨਾਂ ਲਈ AI ਸਹਾਇਕ',
@@ -116,7 +113,6 @@ export const languages = {
   te: {
     code: 'te',
     name: 'తెలుగు',
-    flag: '🇮🇳',
     ui: {
       title: 'వ్యవసాయ సహాయకుడు',
       subtitle: 'రైతుల కోసం AI సహాయకుడు',
@@ -154,7 +150,6 @@ export const languages = {
   ta: {
     code: 'ta',
     name: 'தமிழ்',
-    flag: '🇮🇳',
     ui: {
       title: 'விவசாய உதவியாளர்',
       subtitle: 'விவசாயிகளுக்கான AI உதவியாளர்',
