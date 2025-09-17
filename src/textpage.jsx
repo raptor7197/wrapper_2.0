@@ -32,7 +32,7 @@ const fetchGeminiResponse = async (prompt, customPrompt = '', language = 'hi') =
 };
 
 const TextPage = () => {
-  const [currentLang, setCurrentLang] = createSignal('hi'); // Default to Hindi
+  const [currentLang, setCurrentLang] = createSignal('en'); // Default to Hindi
   const [inputText, setInputText] = createSignal('');
   const [responseText, setResponseText] = createSignal('');
   const [isLoading, setIsLoading] = createSignal(false);
@@ -163,7 +163,6 @@ const TextPage = () => {
 
   return (
     <div className="bg-gradient-to-br from-green-50 to-green-100 min-h-screen w-screen">
-      {/* Header */}
       <div className="bg-gradient-to-r from-green-600 to-green-700 text-white py-6 px-4 shadow-lg">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between">
@@ -176,7 +175,6 @@ const TextPage = () => {
               <div className="text-4xl">🚜</div>
             </div>
             
-            {/* Language Selector */}
             <div className="relative">
               <select
                 value={currentLang()}
@@ -195,7 +193,6 @@ const TextPage = () => {
       </div>
 
       <div className="max-w-4xl mx-auto p-4 md:p-6">
-        {/* Quick Questions */}
         <div className="bg-white rounded-xl shadow-lg p-6 mb-6 border-l-4 border-green-500">
           <h2 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
             <span className="text-2xl mr-2">💡</span>
@@ -214,7 +211,6 @@ const TextPage = () => {
           </div>
         </div>
 
-        {/* Main Chat Interface */}
         <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-green-200">
           <div className="bg-green-600 text-white p-4">
             <h3 className="font-semibold flex items-center text-lg">
@@ -229,7 +225,6 @@ const TextPage = () => {
                 {langData().ui.yourQuestion}
               </label>
               
-              {/* Voice Input Controls */}
               {voiceSupported() && (
                 <div className="flex gap-2 mb-3">
                   <button
@@ -265,7 +260,6 @@ const TextPage = () => {
                 </div>
               )}
 
-              {/* Voice Status Indicators */}
               {isListening() && (
                 <div className="mb-3 p-3 bg-green-50 border border-green-200 rounded-lg">
                   <div className="flex items-center space-x-2 text-green-700">
@@ -311,7 +305,6 @@ const TextPage = () => {
               )}
             </div>
 
-            {/* Advanced Options Toggle */}
             <div>
               <button
                 type="button"
@@ -407,7 +400,6 @@ const TextPage = () => {
           )}
         </div>
 
-        {/* Footer */}
         <div className="mt-6 text-center text-green-600 text-sm">
           <p>🌱 {langData().ui.footer}</p>
         </div>
